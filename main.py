@@ -10,7 +10,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import nmap
 import socket3
-import raporlama
+from raporlama import Test
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -205,7 +205,7 @@ class Ui_MainWindow(object):
 
     def kaydetButon(self):
         self.listWidget.addItem("Tara Clicked")
-        t=raporlama
+        t=Test()
         t.run()
         #gelen_ip_listesi = socket3.run(self.lineEdit.text())
         #for i in gelen_ip_listesi:
