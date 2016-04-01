@@ -1,7 +1,16 @@
 # -*- coding: utf-8 -*-
 
+# Form implementation generated from reading ui file 'mainwindow.ui'
+#
+# Created: Sat Mar 26 21:43:19 2016
+#      by: PyQt5 UI code generator 5.2.1
+#
+# WARNING! All changes made in this file will be lost!
+
 from PyQt5 import QtCore, QtGui, QtWidgets
 import nmap
+import socket3
+import raporlama
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -64,15 +73,24 @@ class Ui_MainWindow(object):
         self.lineEdit = QtWidgets.QLineEdit(self.tab)
         self.lineEdit.setGeometry(QtCore.QRect(30, 10, 511, 27))
         self.lineEdit.setObjectName("lineEdit")
+        self.lineEdit.setText('Tarama yapılacak ağ adresini giriniz Örneğin: 192.168.1.10/20')
+        self.lineEdit.setStyleSheet("color: rgb(191, 176, 176);")
         self.lineEdit_2 = QtWidgets.QLineEdit(self.tab)
         self.lineEdit_2.setGeometry(QtCore.QRect(30, 50, 511, 27))
         self.lineEdit_2.setObjectName("lineEdit_2")
+        self.lineEdit_2.setText('-sV -T4')
+        self.lineEdit_2.setStyleSheet("color: rgb(191, 176, 176);")
         self.comboBox = QtWidgets.QComboBox(self.tab)
         self.comboBox.setGeometry(QtCore.QRect(550, 10, 271, 27))
         self.comboBox.setObjectName("comboBox")
+        self.comboBox.addItem('Kaydedilen Ağ Seçiniz')
         self.comboBox_2 = QtWidgets.QComboBox(self.tab)
         self.comboBox_2.setGeometry(QtCore.QRect(550, 50, 271, 27))
         self.comboBox_2.setObjectName("comboBox_2")
+        self.comboBox_2.addItem('Tarama Türü Seçiniz')
+        self.comboBox_2.addItem('Hızlı Tara')
+        self.comboBox_2.addItem('Detaylı Tarama (TCP portlarıyla)')
+        self.comboBox_2.addItem('Detaylı Tarama')
         self.commandLinkButton_7 = QtWidgets.QCommandLinkButton(self.tab)
         self.commandLinkButton_7.setGeometry(QtCore.QRect(0, 0, 31, 31))
         self.commandLinkButton_7.setLayoutDirection(QtCore.Qt.LeftToRight)
@@ -175,20 +193,39 @@ class Ui_MainWindow(object):
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
         self.commandLinkButton.clicked.connect(self.handleButton2)
+        self.commandLinkButton_2.clicked.connect(self.kaydetButon)
         #self.pushButton_2.clicked.connect(self.handleButton2)
         self.listWidget.clicked.connect(self.handlelistWidget)
+        self.comboBox_2.currentTextChanged['QString'].connect(self.taramaTuru)
 
         self.retranslateUi(MainWindow)
         self.tabWidget.setCurrentIndex(0)
         self.tabWidget_2.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+    def kaydetButon(self):
+        self.listWidget.addItem("Tara Clicked")
+        t=raporlama
+        t.run()
+        #gelen_ip_listesi = socket3.run(self.lineEdit.text())
+        #for i in gelen_ip_listesi:
+        #    self.listWidget.addItem(i)
 
+    def taramaTuru(self):
+        
+        self.listWidget.addItem(str(self.comboBox_2.currentText()))
+        if str(self.comboBox_2.currentText()) == 'Hızlı Tara':
+            self.lineEdit_2.setText('-T4 -F')
+        elif str(self.comboBox_2.currentText()) == 'Detaylı Tarama':
+            self.lineEdit_2.setText('-T4 -A -v')
+        elif str(self.comboBox_2.currentText()) == 'Detaylı Tarama (TCP portlarıyla)':
+            self.lineEdit_2.setText('-p 1-65535 -T4 -A -v')
+            
 
-    def handlelistWidget(self): #Taranan Yerel Ağdaki bilgisayarlardan birini seçerek portları hakkında bilgi sahibi olmak için...
-        self.tableWidget.clear() 
+    def handlelistWidget(self):
+        self.tableWidget_4.clear() 
         ip_adresi = self.listWidget.currentItem().text()
-        self.tableWidget.setItem(1,0, QtWidgets.QTableWidgetItem(ip_adresi))
+        self.tableWidget_4.setItem(1,1, QtWidgets.QTableWidgetItem(ip_adresi))
 
         nm = nmap.PortScanner()
         sozluk=nm.scan(self.listWidget.currentItem().text(), '22-633')
@@ -201,20 +238,23 @@ class Ui_MainWindow(object):
 
         tik="✔"
         
-        self.tableWidget.clear()                
+        self.tableWidget_4.clear()
+        self.tableWidget_4.setHorizontalHeaderLabels(['','Port','Protokol','State','Service','Version'])
         onluk=10
+        self.tableWidget_4.setColumnCount(6)
+        self.tableWidget_4.setRowCount(int(len(yeni)/10)-1)
         for i in range(int(len(yeni)/10)-1):	
-            self.tableWidget.setItem(i,0, QtWidgets.QTableWidgetItem(tik))
-            self.tableWidget.setItem(i,1, QtWidgets.QTableWidgetItem(yeni[onluk+2]))
-            self.tableWidget.setItem(i,2, QtWidgets.QTableWidgetItem(yeni[onluk+1]))
-            self.tableWidget.setItem(i,3, QtWidgets.QTableWidgetItem(yeni[onluk+4]))
-            self.tableWidget.setItem(i,4, QtWidgets.QTableWidgetItem(yeni[onluk+3]))
-            self.tableWidget.setItem(i,5, QtWidgets.QTableWidgetItem(yeni[onluk+5]+"("+yeni[onluk+6]+")"))
+            self.tableWidget_4.setItem(i,0, QtWidgets.QTableWidgetItem(tik))
+            self.tableWidget_4.setItem(i,1, QtWidgets.QTableWidgetItem(yeni[onluk+2]))
+            self.tableWidget_4.setItem(i,2, QtWidgets.QTableWidgetItem(yeni[onluk+1]))
+            self.tableWidget_4.setItem(i,3, QtWidgets.QTableWidgetItem(yeni[onluk+4]))
+            self.tableWidget_4.setItem(i,4, QtWidgets.QTableWidgetItem(yeni[onluk+3]))
+            self.tableWidget_4.setItem(i,5, QtWidgets.QTableWidgetItem(yeni[onluk+5]+"("+yeni[onluk+6]+")"))
             onluk=onluk+10
 
         
 
-    def handleButton2(self): #Yerel Ağdaki Bilgisyarları taramak için...
+    def handleButton2(self):
         self.listWidget.addItem("Tara Clicked")
         gelen_ip_listesi = socket3.run(self.lineEdit.text())
         for i in gelen_ip_listesi:
@@ -242,14 +282,15 @@ class Ui_MainWindow(object):
         
         onluk=10
         for i in range(int(len(yeni)/10)-1):	
-            self.tableWidget.setItem(i,0, QtWidgets.QTableWidgetItem(tik))
-            self.tableWidget.setItem(i,1, QtWidgets.QTableWidgetItem(yeni[onluk+2]))
-            self.tableWidget.setItem(i,2, QtWidgets.QTableWidgetItem(yeni[onluk+1]))
-            self.tableWidget.setItem(i,3, QtWidgets.QTableWidgetItem(yeni[onluk+4]))
-            self.tableWidget.setItem(i,4, QtWidgets.QTableWidgetItem(yeni[onluk+3]))
-            self.tableWidget.setItem(i,5, QtWidgets.QTableWidgetItem(yeni[onluk+5]+"("+yeni[onluk+6]+")"))
+            self.tableWidget_2.setItem(i,0, QtWidgets.QTableWidgetItem(tik))
+            self.tableWidget_2.setItem(i,1, QtWidgets.QTableWidgetItem(yeni[onluk+2]))
+            self.tableWidget_2.setItem(i,2, QtWidgets.QTableWidgetItem(yeni[onluk+1]))
+            self.tableWidget_2.setItem(i,3, QtWidgets.QTableWidgetItem(yeni[onluk+4]))
+            self.tableWidget_2.setItem(i,4, QtWidgets.QTableWidgetItem(yeni[onluk+3]))
+            self.tableWidget_2.setItem(i,5, QtWidgets.QTableWidgetItem(yeni[onluk+5]+"("+yeni[onluk+6]+")"))
             onluk=onluk+10
 
+      
 
 
     def retranslateUi(self, MainWindow):
@@ -272,20 +313,20 @@ class Ui_MainWindow(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("MainWindow", "Tarama Ekranı"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("MainWindow", "Tarama Ayarları"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), _translate("MainWindow", "Nse Ayarları"))
-        self.commandLinkButton.setText(_translate("MainWindow", "Tara"))
-        self.commandLinkButton_2.setText(_translate("MainWindow", "Kaydet"))
-        self.commandLinkButton_3.setText(_translate("MainWindow", "Farklı Kaydet"))
-        self.commandLinkButton_4.setText(_translate("MainWindow", "Geçmişi Temizle"))
-        self.commandLinkButton_5.setText(_translate("MainWindow", "Favorilere Ekle"))
-        self.commandLinkButton_6.setText(_translate("MainWindow", "Çıkış"))
+        self.commandLinkButton.setText("Tara")
+        self.commandLinkButton_2.setText("Kaydet")
+        self.commandLinkButton_3.setText("Farklı Kaydet")
+        self.commandLinkButton_4.setText("Geçmişi Temizle")
+        self.commandLinkButton_5.setText("Favorilere Ekle")
+        self.commandLinkButton_6.setText("Çıkış")
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
+    app.setWindowIcon(QtGui.QIcon('../Resimler/nmapsi4.png'))
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
-
