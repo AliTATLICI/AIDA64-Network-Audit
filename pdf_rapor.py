@@ -8,24 +8,13 @@ pdfmetrics.registerFont(TTFont('Vera', 'Vera.ttf'))
 pdfmetrics.registerFont(TTFont('VeraBd', 'VeraBd.ttf'))
 
 def pdfkaydedici(gelenveri): 
-   doc = SimpleDocTemplate("complex_cell_values.pdf", pagesize=letter)
+   doc = SimpleDocTemplate("nmapsi_scan.pdf", pagesize=letter)
    # container for the 'Flowable' objects
    elements = []
     
    styleSheet = getSampleStyleSheet()
     
-   #I = Image('saveas3.jpg')
-   #I.drawHeight = 1.25*inch*I.drawHeight / I.drawWidth
-   #I.drawWidth = 1.25*inch
-   P0 = Paragraph('''
-                  <b>A pa<font color=red>r</font>a<i>graph</i></b>
-                  <super><font color=yellow>1</font></super>''',
-                  styleSheet["BodyText"])
-   P = Paragraph('''
-       <para align=center spaceb=3>The <b>ReportLabşşğç Left
-       <font color=red>Logo</font></b>
-       Image</para>''',
-       styleSheet["BodyText"])
+   
    data=[]
    for i in range(len(gelenveri)):
       data.append([gelenveri[i], 'B', 'C', 'E', 'D'])
