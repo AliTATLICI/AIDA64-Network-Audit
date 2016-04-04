@@ -10,7 +10,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import nmap
 import socket3
-from raporlama import Test
+import pdf_rapor
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -203,16 +203,25 @@ class Ui_MainWindow(object):
         self.tabWidget.setCurrentIndex(0)
         self.tabWidget_2.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
         
+
+
     def handlelineEdit(self):
         self.lineEdit.clear()
-        self.lineEdit.setText('')
+        self.lineEdit.setText('tıkl')
         self.lineEdit.setStyleSheet("color: rgb(100, 100, 176);")
+        
 
     def kaydetButon(self):
         self.listWidget.addItem("Tara Clicked")
-        t=Test()
-        t.run()
+        pdf_goruntusu=[]
+        for i in range(self.listWidget.count()):
+            pdf_goruntusu.append(self.listWidget.item(i).text())
+        
+        print(pdf_goruntusu)
+        t=pdf_rapor
+        t.pdfkaydedici(pdf_goruntusu)
         #gelen_ip_listesi = socket3.run(self.lineEdit.text())
         #for i in gelen_ip_listesi:
         #    self.listWidget.addItem(i)
