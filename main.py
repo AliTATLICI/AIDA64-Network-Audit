@@ -197,11 +197,17 @@ class Ui_MainWindow(object):
         #self.pushButton_2.clicked.connect(self.handleButton2)
         self.listWidget.clicked.connect(self.handlelistWidget)
         self.comboBox_2.currentTextChanged['QString'].connect(self.taramaTuru)
+        self.lineEdit.selectionChanged.connect(self.handlelineEdit)
 
         self.retranslateUi(MainWindow)
         self.tabWidget.setCurrentIndex(0)
         self.tabWidget_2.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        
+    def handlelineEdit(self):
+        self.lineEdit.clear()
+        self.lineEdit.setText('')
+        self.lineEdit.setStyleSheet("color: rgb(100, 100, 176);")
 
     def kaydetButon(self):
         self.listWidget.addItem("Tara Clicked")
