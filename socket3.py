@@ -26,10 +26,7 @@ def run(ipsi):
 
 
 if __name__ == '__main__':
-    print ('''I'm scanning the local network for connected Windows machines (and others with samba server running).
-Also, I'll try to resolve the hostnames.
-This might take some time, depending on the number of the PC's found. Please wait...''')
-
+   
     run()
 
-    print('Done')
+    print('Ağ Taraması yapıldı')
