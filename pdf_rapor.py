@@ -8,7 +8,7 @@ pdfmetrics.registerFont(TTFont('Vera', 'Vera.ttf'))
 pdfmetrics.registerFont(TTFont('VeraBd', 'VeraBd.ttf'))
 
 def pdfkaydedici(gelenveri): 
-   doc = SimpleDocTemplate("nmapsi_scan.pdf", pagesize=letter)
+   doc = SimpleDocTemplate("nmapsi_tarama.pdf", pagesize=letter)
    # container for the 'Flowable' objects
    elements = []
     
@@ -17,7 +17,7 @@ def pdfkaydedici(gelenveri):
    
    data=[]
    for i in range(len(gelenveri)):
-      data.append([gelenveri[i], 'B', 'C', 'E', 'D'])
+      data.append([gelenveri[i], 'port', 'port', 'port', 'port'])
     
    t=Table(data,style=[('GRID',(1,1),(-2,-2),1,colors.green),
                        ('BOX',(0,0),(1,-1),2,colors.red),
