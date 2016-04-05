@@ -55,7 +55,7 @@ class Ui_MainWindow(object):
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget_4.setHorizontalHeaderItem(5, item)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../Resimler/info.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("ikonlar/info.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.tabWidget_2.addTab(self.tab_5, icon, "")
         self.tableWidget_2 = QtWidgets.QTableWidget(self.tab)
         self.tableWidget_2.setGeometry(QtCore.QRect(240, 340, 371, 192))
@@ -97,18 +97,18 @@ class Ui_MainWindow(object):
         self.commandLinkButton_7.setStyleSheet("background-color: rgb(210, 206, 206);")
         self.commandLinkButton_7.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("../Resimler/edit-clear-locationbar-rtl.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap("ikonlar/edit-clear-locationbar-rtl.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.commandLinkButton_7.setIcon(icon1)
         self.commandLinkButton_7.setObjectName("commandLinkButton_7")
         self.commandLinkButton_8 = QtWidgets.QCommandLinkButton(self.tab)
         self.commandLinkButton_8.setGeometry(QtCore.QRect(0, 40, 31, 41))
         self.commandLinkButton_8.setText("")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("../Resimler/bookmark_add.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap("ikonlar/bookmark_add.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.commandLinkButton_8.setIcon(icon2)
         self.commandLinkButton_8.setObjectName("commandLinkButton_8")
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("../Resimler/network_local.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon3.addPixmap(QtGui.QPixmap("ikonlar/network_local.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.tabWidget.addTab(self.tab, icon3, "")
         self.tab_2 = QtWidgets.QWidget()
         self.tab_2.setObjectName("tab_2")
@@ -117,17 +117,17 @@ class Ui_MainWindow(object):
         self.progressBar.setProperty("value", 24)
         self.progressBar.setObjectName("progressBar")
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("../Resimler/utilities-log-viewer.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon4.addPixmap(QtGui.QPixmap("ikonlar/utilities-log-viewer.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.tabWidget.addTab(self.tab_2, icon4, "")
         self.tab_3 = QtWidgets.QWidget()
         self.tab_3.setObjectName("tab_3")
         icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap("../Resimler/tool.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon5.addPixmap(QtGui.QPixmap("ikonlar/tool.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.tabWidget.addTab(self.tab_3, icon5, "")
         self.tab_4 = QtWidgets.QWidget()
         self.tab_4.setObjectName("tab_4")
         icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap("../Resimler/viewmag+.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon6.addPixmap(QtGui.QPixmap("ikonlar/viewmag+.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.tabWidget.addTab(self.tab_4, icon6, "")
         self.commandLinkButton = QtWidgets.QCommandLinkButton(self.centralwidget)
         self.commandLinkButton.setGeometry(QtCore.QRect(30, 0, 71, 41))
@@ -135,7 +135,7 @@ class Ui_MainWindow(object):
         font.setPointSize(12)
         self.commandLinkButton.setFont(font)
         icon7 = QtGui.QIcon()
-        icon7.addPixmap(QtGui.QPixmap("../Resimler/scan2.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon7.addPixmap(QtGui.QPixmap("ikonlar/scan2.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.commandLinkButton.setIcon(icon7)
         self.commandLinkButton.setCheckable(False)
         self.commandLinkButton.setObjectName("commandLinkButton")
@@ -145,7 +145,7 @@ class Ui_MainWindow(object):
         font.setPointSize(12)
         self.commandLinkButton_2.setFont(font)
         icon8 = QtGui.QIcon()
-        icon8.addPixmap(QtGui.QPixmap("../Resimler/save.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon8.addPixmap(QtGui.QPixmap("ikonlar/save.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.commandLinkButton_2.setIcon(icon8)
         self.commandLinkButton_2.setObjectName("commandLinkButton_2")
         self.commandLinkButton_3 = QtWidgets.QCommandLinkButton(self.centralwidget)
@@ -154,7 +154,7 @@ class Ui_MainWindow(object):
         font.setPointSize(12)
         self.commandLinkButton_3.setFont(font)
         icon9 = QtGui.QIcon()
-        icon9.addPixmap(QtGui.QPixmap("../Resimler/saveas3.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon9.addPixmap(QtGui.QPixmap("ikonlar/saveas3.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.commandLinkButton_3.setIcon(icon9)
         self.commandLinkButton_3.setObjectName("commandLinkButton_3")
         self.commandLinkButton_4 = QtWidgets.QCommandLinkButton(self.centralwidget)
@@ -163,7 +163,7 @@ class Ui_MainWindow(object):
         font.setPointSize(12)
         self.commandLinkButton_4.setFont(font)
         icon10 = QtGui.QIcon()
-        icon10.addPixmap(QtGui.QPixmap("../Resimler/clear.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon10.addPixmap(QtGui.QPixmap("ikonlar/clear.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.commandLinkButton_4.setIcon(icon10)
         self.commandLinkButton_4.setObjectName("commandLinkButton_4")
         self.commandLinkButton_5 = QtWidgets.QCommandLinkButton(self.centralwidget)
@@ -172,7 +172,7 @@ class Ui_MainWindow(object):
         font.setPointSize(12)
         self.commandLinkButton_5.setFont(font)
         icon11 = QtGui.QIcon()
-        icon11.addPixmap(QtGui.QPixmap("../Resimler/add.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon11.addPixmap(QtGui.QPixmap("ikonlar/add.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.commandLinkButton_5.setIcon(icon11)
         self.commandLinkButton_5.setObjectName("commandLinkButton_5")
         self.commandLinkButton_6 = QtWidgets.QCommandLinkButton(self.centralwidget)
@@ -181,7 +181,7 @@ class Ui_MainWindow(object):
         font.setPointSize(12)
         self.commandLinkButton_6.setFont(font)
         icon12 = QtGui.QIcon()
-        icon12.addPixmap(QtGui.QPixmap("../Resimler/quit.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon12.addPixmap(QtGui.QPixmap("ikonlar/quit.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.commandLinkButton_6.setIcon(icon12)
         self.commandLinkButton_6.setObjectName("commandLinkButton_6")
         MainWindow.setCentralWidget(self.centralwidget)
@@ -207,13 +207,14 @@ class Ui_MainWindow(object):
         
 
 
-    def handlelineEdit(self):
+    def handlelineEdit(self): #lineEdit'in üzerine tıklayınca bilgi amaçlı yazıyı silmek için...
         self.lineEdit.clear()
-        self.lineEdit.setText('tıkl')
+        self.lineEdit.setText('')
         self.lineEdit.setStyleSheet("color: rgb(100, 100, 176);")
         
 
-    def kaydetButon(self):
+    def kaydetButon(self): # Kaydet butonunu tıklayınca listWidget deki bilgileri PDF olarak kaydetmek için...
+        
         self.listWidget.addItem("Tara Clicked")
         pdf_goruntusu=[]
         for i in range(self.listWidget.count()):
@@ -222,13 +223,10 @@ class Ui_MainWindow(object):
         print(pdf_goruntusu)
         t=pdf_rapor
         t.pdfkaydedici(pdf_goruntusu)
-        #gelen_ip_listesi = socket3.run(self.lineEdit.text())
-        #for i in gelen_ip_listesi:
-        #    self.listWidget.addItem(i)
-
-    def taramaTuru(self):
         
-        self.listWidget.addItem(str(self.comboBox_2.currentText()))
+
+    def taramaTuru(self): #tarama türüne göre comboBox değişikliği        
+        
         if str(self.comboBox_2.currentText()) == 'Hızlı Tara':
             self.lineEdit_2.setText('-T4 -F')
         elif str(self.comboBox_2.currentText()) == 'Detaylı Tarama':
@@ -237,7 +235,7 @@ class Ui_MainWindow(object):
             self.lineEdit_2.setText('-p 1-65535 -T4 -A -v')
             
 
-    def handlelistWidget(self):
+    def handlelistWidget(self): # listWidgetdeli IP tıklanınca açık portlarını tableWidget e aktarmak için...
         self.tableWidget_4.clear() 
         ip_adresi = self.listWidget.currentItem().text()
         self.tableWidget_4.setItem(1,1, QtWidgets.QTableWidgetItem(ip_adresi))
@@ -269,43 +267,14 @@ class Ui_MainWindow(object):
 
         
 
-    def handleButton2(self):
+    def handleButton2(self):  #Ağdaki bilgisayarları tarayıp listWidgette sıralamak için...
         self.listWidget.addItem("Tara Clicked")
         gelen_ip_listesi = socket3.run(self.lineEdit.text())
         for i in gelen_ip_listesi:
             self.listWidget.addItem(i)
         
 
-    def handleButton(self):
-        self.pushButton_2.setText("Button Clicked")
-        nm = nmap.PortScanner()
-        sozluk=nm.scan(self.lineEdit.text(), '22-633')
-        print(nm.command_line())  
-        
-        print(sozluk)
-        dizi=nm.csv()
-        yeni=dizi.split(";")
-        print(yeni)
-
-        tik="✔"
-        
-        hostlar=nm.all_hosts()
-        print(hostlar)
-
-        network = self.lineEdit.text()
-        self.listWidget.addItem(network)
-        
-        onluk=10
-        for i in range(int(len(yeni)/10)-1):	
-            self.tableWidget_2.setItem(i,0, QtWidgets.QTableWidgetItem(tik))
-            self.tableWidget_2.setItem(i,1, QtWidgets.QTableWidgetItem(yeni[onluk+2]))
-            self.tableWidget_2.setItem(i,2, QtWidgets.QTableWidgetItem(yeni[onluk+1]))
-            self.tableWidget_2.setItem(i,3, QtWidgets.QTableWidgetItem(yeni[onluk+4]))
-            self.tableWidget_2.setItem(i,4, QtWidgets.QTableWidgetItem(yeni[onluk+3]))
-            self.tableWidget_2.setItem(i,5, QtWidgets.QTableWidgetItem(yeni[onluk+5]+"("+yeni[onluk+6]+")"))
-            onluk=onluk+10
-
-      
+         
 
 
     def retranslateUi(self, MainWindow):
@@ -339,7 +308,7 @@ class Ui_MainWindow(object):
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    app.setWindowIcon(QtGui.QIcon('../Resimler/nmapsi4.png'))
+    app.setWindowIcon(QtGui.QIcon('ikonlar/nmapsi4.png'))
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
