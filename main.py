@@ -1,18 +1,10 @@
-# -*- coding: utf-8 -*-
-
-# Form implementation generated from reading ui file 'mainwindow.ui'
-#
-# Created: Sat Mar 26 21:43:19 2016
-#      by: PyQt5 UI code generator 5.2.1
-#
-# WARNING! All changes made in this file will be lost!
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 import nmap
 import socket3
-import pdf_rapor
+import time
 
 class Ui_MainWindow(object):
+    
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(934, 667)
@@ -116,27 +108,55 @@ class Ui_MainWindow(object):
         self.progressBar.setGeometry(QtCore.QRect(10, 10, 841, 16))
         self.progressBar.setProperty("value", 24)
         self.progressBar.setObjectName("progressBar")
+        self.tableWidget_5 = QtWidgets.QTableWidget(self.tab_2)
+        self.tableWidget_5.setGeometry(QtCore.QRect(10, 80, 831, 251))
+        self.tableWidget_5.setLayoutDirection(QtCore.Qt.LeftToRight)
+        #self.tableWidget_5.setAutoFillBackground(False)
+        self.tableWidget_5.setObjectName("tableWidget_5")
+        self.tableWidget_5.setColumnCount(3)
+        self.tableWidget_5.setRowCount(0)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget_5.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget_5.setHorizontalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget_5.setHorizontalHeaderItem(2, item)
+        self.tableWidget_5.horizontalHeader().setVisible(True)
+        self.pushButton = QtWidgets.QPushButton(self.tab_2)
+        self.pushButton.setGeometry(QtCore.QRect(10, 40, 151, 27))
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("ikonlar/utilities-log-viewer.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.tabWidget.addTab(self.tab_2, icon4, "")
+        icon4.addPixmap(QtGui.QPixmap("ikonlar/stop.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton.setIcon(icon4)
+        self.pushButton.setObjectName("pushButton")
+        self.pushButton_2 = QtWidgets.QPushButton(self.tab_2)
+        self.pushButton_2.setGeometry(QtCore.QRect(170, 40, 191, 27))
+        self.pushButton_2.setIcon(icon4)
+        self.pushButton_2.setObjectName("pushButton_2")
+        self.pushButton_3 = QtWidgets.QPushButton(self.tab_2)
+        self.pushButton_3.setGeometry(QtCore.QRect(370, 40, 131, 27))
+        self.pushButton_3.setIcon(icon)
+        self.pushButton_3.setObjectName("pushButton_3")
+        icon5 = QtGui.QIcon()
+        icon5.addPixmap(QtGui.QPixmap("ikonlar/utilities-log-viewer.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.tabWidget.addTab(self.tab_2, icon5, "")
         self.tab_3 = QtWidgets.QWidget()
         self.tab_3.setObjectName("tab_3")
-        icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap("ikonlar/tool.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.tabWidget.addTab(self.tab_3, icon5, "")
+        icon6 = QtGui.QIcon()
+        icon6.addPixmap(QtGui.QPixmap("ikonlar/tool.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.tabWidget.addTab(self.tab_3, icon6, "")
         self.tab_4 = QtWidgets.QWidget()
         self.tab_4.setObjectName("tab_4")
-        icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap("ikonlar/viewmag+.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.tabWidget.addTab(self.tab_4, icon6, "")
+        icon7 = QtGui.QIcon()
+        icon7.addPixmap(QtGui.QPixmap("ikonlar/viewmag+.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.tabWidget.addTab(self.tab_4, icon7, "")
         self.commandLinkButton = QtWidgets.QCommandLinkButton(self.centralwidget)
         self.commandLinkButton.setGeometry(QtCore.QRect(30, 0, 71, 41))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.commandLinkButton.setFont(font)
-        icon7 = QtGui.QIcon()
-        icon7.addPixmap(QtGui.QPixmap("ikonlar/scan2.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.commandLinkButton.setIcon(icon7)
+        icon8 = QtGui.QIcon()
+        icon8.addPixmap(QtGui.QPixmap("ikonlar/scan2.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.commandLinkButton.setIcon(icon8)
         self.commandLinkButton.setCheckable(False)
         self.commandLinkButton.setObjectName("commandLinkButton")
         self.commandLinkButton_2 = QtWidgets.QCommandLinkButton(self.centralwidget)
@@ -144,45 +164,45 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(12)
         self.commandLinkButton_2.setFont(font)
-        icon8 = QtGui.QIcon()
-        icon8.addPixmap(QtGui.QPixmap("ikonlar/save.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.commandLinkButton_2.setIcon(icon8)
+        icon9 = QtGui.QIcon()
+        icon9.addPixmap(QtGui.QPixmap("ikonlar/save.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.commandLinkButton_2.setIcon(icon9)
         self.commandLinkButton_2.setObjectName("commandLinkButton_2")
         self.commandLinkButton_3 = QtWidgets.QCommandLinkButton(self.centralwidget)
         self.commandLinkButton_3.setGeometry(QtCore.QRect(190, 0, 141, 41))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.commandLinkButton_3.setFont(font)
-        icon9 = QtGui.QIcon()
-        icon9.addPixmap(QtGui.QPixmap("ikonlar/saveas3.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.commandLinkButton_3.setIcon(icon9)
+        icon10 = QtGui.QIcon()
+        icon10.addPixmap(QtGui.QPixmap("ikonlar/saveas3.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.commandLinkButton_3.setIcon(icon10)
         self.commandLinkButton_3.setObjectName("commandLinkButton_3")
         self.commandLinkButton_4 = QtWidgets.QCommandLinkButton(self.centralwidget)
         self.commandLinkButton_4.setGeometry(QtCore.QRect(330, 0, 161, 41))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.commandLinkButton_4.setFont(font)
-        icon10 = QtGui.QIcon()
-        icon10.addPixmap(QtGui.QPixmap("ikonlar/clear.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.commandLinkButton_4.setIcon(icon10)
+        icon11 = QtGui.QIcon()
+        icon11.addPixmap(QtGui.QPixmap("ikonlar/clear.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.commandLinkButton_4.setIcon(icon11)
         self.commandLinkButton_4.setObjectName("commandLinkButton_4")
         self.commandLinkButton_5 = QtWidgets.QCommandLinkButton(self.centralwidget)
         self.commandLinkButton_5.setGeometry(QtCore.QRect(490, 0, 151, 41))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.commandLinkButton_5.setFont(font)
-        icon11 = QtGui.QIcon()
-        icon11.addPixmap(QtGui.QPixmap("ikonlar/add.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.commandLinkButton_5.setIcon(icon11)
+        icon12 = QtGui.QIcon()
+        icon12.addPixmap(QtGui.QPixmap("ikonlar/add.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.commandLinkButton_5.setIcon(icon12)
         self.commandLinkButton_5.setObjectName("commandLinkButton_5")
         self.commandLinkButton_6 = QtWidgets.QCommandLinkButton(self.centralwidget)
         self.commandLinkButton_6.setGeometry(QtCore.QRect(640, 0, 81, 41))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.commandLinkButton_6.setFont(font)
-        icon12 = QtGui.QIcon()
-        icon12.addPixmap(QtGui.QPixmap("ikonlar/quit.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.commandLinkButton_6.setIcon(icon12)
+        icon13 = QtGui.QIcon()
+        icon13.addPixmap(QtGui.QPixmap("ikonlar/quit.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.commandLinkButton_6.setIcon(icon13)
         self.commandLinkButton_6.setObjectName("commandLinkButton_6")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
@@ -192,20 +212,44 @@ class Ui_MainWindow(object):
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
+
+        
         self.commandLinkButton.clicked.connect(self.handleButton2)
         self.commandLinkButton_2.clicked.connect(self.kaydetButon)
+        self.commandLinkButton_3.clicked.connect(self.farkliKaydetButon)
         #self.pushButton_2.clicked.connect(self.handleButton2)
         self.listWidget.clicked.connect(self.handlelistWidget)
         self.comboBox_2.currentTextChanged['QString'].connect(self.taramaTuru)
         self.lineEdit.selectionChanged.connect(self.handlelineEdit)
+        self.commandLinkButton_4.clicked.connect(self.silButton)
+        self.commandLinkButton_5.clicked.connect(self.favoriButton)
+        self.commandLinkButton_6.clicked.connect(self.cikisButton)
 
+        with open("favoriler.txt", "r") as dosya:
+            kaydedilenler = dosya.readlines()
+            for i in kaydedilenler:
+                self.comboBox.addItem(i)
+                
+        
         self.retranslateUi(MainWindow)
         self.tabWidget.setCurrentIndex(0)
         self.tabWidget_2.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-        
 
+    def cikisButton(self): #Programı kapatmak için...
+         sys.exit()
+
+
+    def favoriButton(self): # Sık girilen taramaları favori olarak eklemek için...
+        with open("favoriler.txt", "a") as dosya:
+            dosya.write(self.lineEdit.text() + "\n")
+        self.comboBox.addItem(self.lineEdit.text())
+
+
+    def silButton(self): # Geçmişi Sil butonunu tıklayınca listWidget deki bilgileri silmek için...
+        self.listWidget.clear()
+        
 
     def handlelineEdit(self): #lineEdit'in üzerine tıklayınca bilgi amaçlı yazıyı silmek için...
         self.lineEdit.clear()
@@ -213,16 +257,33 @@ class Ui_MainWindow(object):
         self.lineEdit.setStyleSheet("color: rgb(100, 100, 176);")
         
 
-    def kaydetButon(self): # Kaydet butonunu tıklayınca listWidget deki bilgileri PDF olarak kaydetmek için...
-        
-        self.listWidget.addItem("Tara Clicked")
-        pdf_goruntusu=[]
-        for i in range(self.listWidget.count()):
-            pdf_goruntusu.append(self.listWidget.item(i).text())
-        
-        print(pdf_goruntusu)
-        t=pdf_rapor
-        t.pdfkaydedici(pdf_goruntusu)
+    def kaydetButon(self): # Kaydet butonunu tıklayınca listWidget deki bilgileri Kaydedile_Portlar.txt e kaydetmek için...
+        if str(self.comboBox_2.currentText()) == 'Hızlı Tara':
+           with open('Kaydedilen_Portlar.txt', 'w') as dosya:
+                
+                for i in gelen_ip_listesi:
+                    dosya.write(i+'\n')
+                    
+    
+        elif str(self.comboBox_2.currentText()) == 'Detaylı Tarama':
+            with open('Kaydedilen_Portlar.txt', 'w') as dosya:
+                for i in range(len(port_sozluk)):
+                    dosya.write(port_sozluk[i][0] +'\t'+ str(port_sozluk[i][1])+'\n')
+
+
+    def farkliKaydetButon(self): # Farklı Kaydet butonunu tıklayınca listWidget deki bilgileri farklı kaydetmek için...
+        if str(self.comboBox_2.currentText()) == 'Hızlı Tara':
+           with open(time.strftime('%c'), 'a') as dosya:
+                
+                for i in gelen_ip_listesi:
+                    dosya.write(i+'\n')
+                    
+    
+        elif str(self.comboBox_2.currentText()) == 'Detaylı Tarama':
+            with open(time.strftime('%c'), 'a') as dosya:
+                for i in range(len(port_sozluk)):
+                    dosya.write(port_sozluk[i][0] +'\t'+str(port_sozluk[i][1])+'\n')
+             
         
 
     def taramaTuru(self): #tarama türüne göre comboBox değişikliği        
@@ -267,14 +328,57 @@ class Ui_MainWindow(object):
 
         
 
-    def handleButton2(self):  #Ağdaki bilgisayarları tarayıp listWidgette sıralamak için...
-        self.listWidget.addItem("Tara Clicked")
-        gelen_ip_listesi = socket3.run(self.lineEdit.text())
-        for i in gelen_ip_listesi:
-            self.listWidget.addItem(i)
-        
 
-         
+    def handleButton2(self):  #Ağdaki bilgisayarları tarayıp listWidgette sıralamak için...
+        if str(self.comboBox_2.currentText()) == 'Hızlı Tara' or str(self.comboBox_2.currentText()) == 'Detaylı Tarama':
+            self.listWidget.clear()
+            #self.listWidget.addItem("Tara Clicked")
+            host_network = self.lineEdit.text().split("/")
+            
+            giden_host = host_network[0]
+            giden_network= host_network[1]
+            global gelen_ip_listesi
+            gelen_ip_listesi = socket3.run(giden_host, giden_network)
+                
+            for i in gelen_ip_listesi:
+                self.listWidget.addItem(i)
+                  
+    
+        if str(self.comboBox_2.currentText()) == 'Detaylı Tarama':
+            
+                       
+            self.tableWidget_5.setRowCount(int(len(gelen_ip_listesi)))
+            for i in range(len(gelen_ip_listesi)):	
+                self.tableWidget_5.setItem(i,0, QtWidgets.QTableWidgetItem(gelen_ip_listesi[i]))
+                self.tableWidget_5.setItem(i,1, QtWidgets.QTableWidgetItem("-T4 -A -v"))
+                self.tableWidget_5.setItem(i,2, QtWidgets.QTableWidgetItem("scannig"))
+                
+
+            self.detayliTarama()
+            
+
+    def detayliTarama(self):
+        global port_sozluk
+        port_sozluk=[]
+        for i in gelen_ip_listesi:
+            i_host = i
+            nm = nmap.PortScanner()
+            sozluk=nm.scan(i, '22-633')
+            print(nm.command_line())  
+            
+            print(sozluk)
+            dizi=nm.csv()
+            yeni=dizi.split(";")
+            print(yeni)
+            onluk=10
+            portlar=""
+            for i in range(int(len(yeni)/10)-1):                
+                portlar=portlar + yeni[onluk+2] + ", " 
+                onluk=onluk+10
+            port_sozluk.append([i_host, [portlar]])
+            
+        print(port_sozluk)
+            
 
 
     def retranslateUi(self, MainWindow):
@@ -294,14 +398,23 @@ class Ui_MainWindow(object):
         item = self.tableWidget_2.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "Host Detayları"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("MainWindow", "Tarama"))
+        item = self.tableWidget_5.horizontalHeaderItem(0)
+        item.setText(_translate("MainWindow", "Ağ Adresi"))
+        item = self.tableWidget_5.horizontalHeaderItem(1)
+        item.setText(_translate("MainWindow", "Tarama Ayarı"))
+        item = self.tableWidget_5.horizontalHeaderItem(2)
+        item.setText(_translate("MainWindow", "Durumu"))
+        self.pushButton.setText(_translate("MainWindow", "Taramaları Durdur"))
+        self.pushButton_2.setText(_translate("MainWindow", "Seçili Taramayı Durdur"))
+        self.pushButton_3.setText(_translate("MainWindow", "Tarama Detayı"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("MainWindow", "Tarama Ekranı"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("MainWindow", "Tarama Ayarları"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), _translate("MainWindow", "Nse Ayarları"))
-        self.commandLinkButton.setText("Tara")
-        self.commandLinkButton_2.setText("Kaydet")
-        self.commandLinkButton_3.setText("Farklı Kaydet")
+        self.commandLinkButton.setText(_translate("MainWindow", "Tara"))
+        self.commandLinkButton_2.setText(_translate("MainWindow", "Kaydet"))
+        self.commandLinkButton_3.setText(_translate("MainWindow", "Farklı Kaydet"))
         self.commandLinkButton_4.setText("Geçmişi Temizle")
-        self.commandLinkButton_5.setText("Favorilere Ekle")
+        self.commandLinkButton_5.setText(_translate("MainWindow", "Favorilere Ekle"))
         self.commandLinkButton_6.setText("Çıkış")
 
 
