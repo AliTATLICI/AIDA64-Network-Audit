@@ -5,27 +5,31 @@ from socket import *
 
 def is_up(addr):
     s = socket(AF_INET, SOCK_STREAM)
-    s.settimeout(0.01)   
+    s.settimeout(0.01)    
     if not s.connect_ex((addr,135)):    
-        s.close()                     
+        s.close()                      
         return 1
     else:
         s.close()
 
-def run(ipsi):
-    network = ipsi
+def run(ipsi, liste_sayisi):
+    network = ipsi[:9]
+    son_ek=int(ipsi[9:])
     ip_listesi=[]
     print('')
-    for ip in range(1,256):    ## 'ping' adresi 192.168.1.1 ile .1.255 arası
-        addr = network + str(ip)
+    for i in range(int(liste_sayisi)):    ## 'ping' adresi 192.168.1.1 / .1.255
+        addr = network + str(son_ek)
         if is_up(addr):
             ip_listesi.append(addr)
-            print('%s \t- %s' %(addr, getfqdn(addr)))    
+            print('%s \t- %s' %(addr, getfqdn(addr)))
+        son_ek = son_ek + 1
     return ip_listesi
     
 
+
 if __name__ == '__main__':
-   
+    
+
     run()
 
-    print('Ağ Taraması yapıldı')
+    print('Ağ taraması yapıldı')
